@@ -1,0 +1,75 @@
+============================= test session starts ==============================
+platform darwin -- Python 3.12.10, pytest-7.4.0, pluggy-1.5.0
+rootdir: /Users/younghwankim/todo_api_assignment
+plugins: anyio-4.9.0, cov-4.1.0
+collected 7 items
+
+tests/test_todos.py ....                                                 [ 57%]
+tests/test_users.py ...                                                  [100%]
+
+=============================== warnings summary ===============================
+venv/lib/python3.12/site-packages/fastapi/openapi/models.py:55
+  /Users/younghwankim/todo_api_assignment/venv/lib/python3.12/site-packages/fastapi/openapi/models.py:55: DeprecationWarning: `general_plain_validator_function` is deprecated, use `with_info_plain_validator_function` instead.
+    return general_plain_validator_function(cls._validate)
+
+venv/lib/python3.12/site-packages/pydantic_core/core_schema.py:4298
+  /Users/younghwankim/todo_api_assignment/venv/lib/python3.12/site-packages/pydantic_core/core_schema.py:4298: DeprecationWarning: `general_plain_validator_function` is deprecated, use `with_info_plain_validator_function` instead.
+    warnings.warn(
+
+venv/lib/python3.12/site-packages/passlib/utils/__init__.py:854
+  /Users/younghwankim/todo_api_assignment/venv/lib/python3.12/site-packages/passlib/utils/__init__.py:854: DeprecationWarning: 'crypt' is deprecated and slated for removal in Python 3.13
+    from crypt import crypt as _crypt
+
+database.py:11
+  /Users/younghwankim/todo_api_assignment/database.py:11: MovedIn20Warning: The ``declarative_base()`` function is now available as sqlalchemy.orm.declarative_base(). (deprecated since: 2.0) (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)
+    Base = declarative_base()
+
+venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:323
+venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:323
+  /Users/younghwankim/todo_api_assignment/venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:323: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.11/migration/
+    warnings.warn(DEPRECATION_MESSAGE, DeprecationWarning)
+
+venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:373
+  /Users/younghwankim/todo_api_assignment/venv/lib/python3.12/site-packages/pydantic/_internal/_config.py:373: UserWarning: Valid config keys have changed in V2:
+  * 'orm_mode' has been renamed to 'from_attributes'
+    warnings.warn(message, UserWarning)
+
+venv/lib/python3.12/site-packages/pydantic/_internal/_generate_schema.py:293
+venv/lib/python3.12/site-packages/pydantic/_internal/_generate_schema.py:293
+  /Users/younghwankim/todo_api_assignment/venv/lib/python3.12/site-packages/pydantic/_internal/_generate_schema.py:293: PydanticDeprecatedSince20: `json_encoders` is deprecated. See https://docs.pydantic.dev/2.11/concepts/serialization/#custom-serializers for alternatives. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.11/migration/
+    warnings.warn(
+
+venv/lib/python3.12/site-packages/httpx/_client.py:690
+venv/lib/python3.12/site-packages/httpx/_client.py:690
+  /Users/younghwankim/todo_api_assignment/venv/lib/python3.12/site-packages/httpx/_client.py:690: DeprecationWarning: The 'app' shortcut is now deprecated. Use the explicit style 'transport=WSGITransport(app=...)' instead.
+    warnings.warn(message, DeprecationWarning)
+
+tests/test_todos.py::test_todo_crud
+tests/test_todos.py::test_search_todos
+tests/test_todos.py::test_invalid_todo_id
+tests/test_users.py::test_signup_and_login
+tests/test_users.py::test_update_user
+  /Users/younghwankim/todo_api_assignment/auth.py:9: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    expire = datetime.utcnow() + expires_delta
+
+tests/test_todos.py: 10 warnings
+tests/test_users.py: 1 warning
+  /Users/younghwankim/todo_api_assignment/venv/lib/python3.12/site-packages/jose/jwt.py:311: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+    now = timegm(datetime.utcnow().utctimetuple())
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+
+--------- coverage: platform darwin, python 3.12.10-final-0 ----------
+Name                  Stmts   Miss  Cover   Missing
+---------------------------------------------------
+auth.py                  10      0   100%
+database.py              13      0   100%
+main.py                 108     17    84%   21-25, 37-39, 42, 49, 61, 69, 76, 83-85, 117, 128
+models.py                17      0   100%
+schemas.py               29      0   100%
+tests/test_todos.py      74      4    95%   12-16
+tests/test_users.py      41      0   100%
+---------------------------------------------------
+TOTAL                   292     21    93%
+
+======================== 7 passed, 27 warnings in 2.39s ========================

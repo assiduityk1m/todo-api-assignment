@@ -1,0 +1,9 @@
+sequenceDiagram
+    participant C as Client
+    participant S as Server
+    C->>S: POST /users/login (email, password)
+    S->>S: Verify credentials
+    S->>C: {access_token, token_type: "bearer"}
+    C->>S: GET /todos (Authorization: Bearer <token>)
+    S->>S: Decode JWT, verify user
+    S->>C: List of todos
